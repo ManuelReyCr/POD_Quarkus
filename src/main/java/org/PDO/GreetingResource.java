@@ -33,8 +33,13 @@ public class GreetingResource {
     @POST
     @Transactional
     public Response crearPersona(Persona nuevaPersona){
-        personas.add(nuevaPersona);
-        return Response.ok(personas).build();
+        if(Integer.parseInt(nuevaPersona.fechaNacimiento)>=1959 && Integer.parseInt(nuevaPersona.fechaNacimiento)<=2004){
+            nuevaPersona.fechaNacimiento = nuevaPersona.fechaNacimiento + "/01/01";
+            
+            personas.add(nuevaPersona);
+            return Response.ok(personas).build();
+        }
+        return Response.noContent().build();
         
     }
 

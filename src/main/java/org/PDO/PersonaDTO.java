@@ -1,43 +1,24 @@
 package org.PDO;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+public class PersonaDTO {
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Size;
-
-import io.smallrye.common.constraint.NotNull;
-
-public class Persona {
-
-    public int id;
     public String nombre;
     public String primerApellido;
     public String segundoApellido;
-    public String fechaNacimiento;
+    public int fechaNacimiento;
     public String domicilio;
 
-    public Persona(){
+    public PersonaDTO(){
 
     }
 
-    public Persona( int id, String nombre, String primerApellido, String segundoApellido, String fechaNacimiento, String domicilio ){
-        this.id=id;
+    public PersonaDTO(String nombre, String primerApellido, String segundoApellido, int fechaNacimiento, String domicilio ){
         this.nombre=nombre;
         this.primerApellido=primerApellido;
         this.segundoApellido=segundoApellido;
         this.fechaNacimiento=fechaNacimiento;
         this.domicilio=domicilio;
-    }
-    
-    public int getId(){
-        return id;
-    }
-    public void setId(int id){
-        this.id = id;
-    }
+    }   
 
     public String getNombre(){
         return nombre;
@@ -62,10 +43,10 @@ public class Persona {
         this.segundoApellido = segundoApellido;
     }
 
-    public String getfechaNacimiento(){
+    public int getfechaNacimiento(){
         return fechaNacimiento;
     }
-    public void setfechaNacimiento(String fechaNacimiento){
+    public void setfechaNacimiento(int fechaNacimiento){
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -76,5 +57,4 @@ public class Persona {
     public void setdomicilio(String domicilio){
         this.domicilio = domicilio;
     }
-
 }
