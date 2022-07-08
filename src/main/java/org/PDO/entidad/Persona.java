@@ -1,5 +1,7 @@
 package org.PDO.entidad;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -9,7 +11,7 @@ public class Persona extends PanacheEntity{
     public String nombre;
     public String primerApellido;
     public String segundoApellido;
-    public String fechaNacimiento;
+    public Date fechaNacimiento;
     public String domicilio;
     public int edad;
 
@@ -17,7 +19,7 @@ public class Persona extends PanacheEntity{
 
     }
 
-    public Persona(String nombre, String primerApellido, String segundoApellido, String fechaNacimiento, String domicilio ){
+    public Persona(String nombre, String primerApellido, String segundoApellido, Date fechaNacimiento, String domicilio ){
         this.nombre=nombre;
         this.primerApellido=primerApellido;
         this.segundoApellido=segundoApellido;
@@ -48,10 +50,10 @@ public class Persona extends PanacheEntity{
         this.segundoApellido = segundoApellido;
     }
 
-    public String getfechaNacimiento(){
+    public Date getfechaNacimiento(){
         return fechaNacimiento;
     }
-    public void setFechaNacimiento(String fechaNacimiento){
+    public void setFechaNacimiento(Date fechaNacimiento){
         this.fechaNacimiento = fechaNacimiento;
     }
 
